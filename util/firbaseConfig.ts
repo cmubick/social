@@ -1,12 +1,13 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: 'place your FIREBASE config here',
-  authDomain: 'place your FIREBASE config here',
-  projectId: 'place your FIREBASE config here',
-  storageBucket: 'place your FIREBASE config here',
-  messagingSenderId: 'place your FIREBASE config here',
-  appId: 'place your FIREBASE config here',
+  apiKey: 'AIzaSyD7cOCOe6qP7Sk2Wj7j0AM_THnHInPRHE0',
+  authDomain: 'social-8b962.firebaseapp.com',
+  projectId: 'social-8b962',
+  storageBucket: 'social-8b962.firebasestorage.app',
+  messagingSenderId: '572199641709',
+  appId: '1:572199641709:web:681cbadf65380596b09564',
+  measurementId: 'G-QP2D06R1EB'
 };
 
 const app = initializeApp(firebaseConfig);
