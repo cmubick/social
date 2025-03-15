@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { useAtom } from 'jotai';
 import Link from 'next/link';
 import PostPopUp from '../PostPopUp';
@@ -48,7 +48,7 @@ const HomePagePost = ({ username, index }: Props) => {
             ''
           )}
           <div className="ml-3 flex items-center py-3">
-            <Link href={username}>
+            <Link legacyBehavior href={username}>
               <a>
                 {postDetails.comments[0].avatarURL ? (
                   <Image
@@ -65,7 +65,7 @@ const HomePagePost = ({ username, index }: Props) => {
                 )}
               </a>
             </Link>
-            <Link href={username}>
+            <Link legacyBehavior href={username}>
               <a>
                 <p className="ml-4 cursor-pointer">
                   {postDetails.comments[0].username}
@@ -170,7 +170,7 @@ const HomePagePost = ({ username, index }: Props) => {
                   Liked by{' '}
                   <b>
                     {postDetails.likes.length > 0 ? (
-                      <Link href={postDetails.likes[0]}>
+                      <Link legacyBehavior href={postDetails.likes[0]}>
                         <a>{postDetails.likes[0]}</a>
                       </Link>
                     ) : (

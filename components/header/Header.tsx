@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useAtom } from 'jotai';
 import ProfilePicSVG from '../svgComps/ProfilePicSVG';
@@ -47,12 +47,12 @@ function Header({ page }: { page: string }) {
     <div className="sticky top-0 z-50 border-b border-stone-300 bg-white dark:border-stone-700 dark:bg-[#1c1c1c] dark:text-slate-100">
       <div className=" flex h-[60px] items-center justify-between px-[5px] sm:px-[20px] lg:justify-center ">
         <div className="flex h-[60px] w-[330px] items-center ">
-          <Link href="/">
-            <a className="w-full max-w-[103px] ">
+          <Link legacyBehavior href="/">
+            <div className="w-full max-w-[103px] ">
               <div className="w-full max-w-[103px] cursor-pointer select-none">
                 <InstagramSVG disableDarkMode={false} white={false} />
               </div>
-            </a>
+            </div>
           </Link>
         </div>
         <div className="relative hidden sm:flex">
@@ -81,14 +81,11 @@ function Header({ page }: { page: string }) {
           </div>
         </div>
         <div className="relative flex items-center pl-[15px] lg:pl-[100px]">
-          <Link href="/">
-            <a>
-              <HomeSVG page={page} />
-            </a>
+          <Link legacyBehavior href="/">
+            <HomeSVG page={page} />
           </Link>
-          <Link href="/Inbox">
-            <a>
-              <div className="relative">
+          <Link legacyBehavior href="/Inbox">
+            <div className="relative">
                 <IndexSVG page={page} />
                 {newMessage ? (
                   <div className="absolute top-[-6px] right-[-8px] flex h-[18px] w-[18px] items-center justify-center rounded-full bg-[#ff3041]">
@@ -98,7 +95,6 @@ function Header({ page }: { page: string }) {
                   ''
                 )}
               </div>
-            </a>
           </Link>
           <button onClick={() => setAddPost(true)} type="button">
             <NewPostSVG />
@@ -157,17 +153,15 @@ function Header({ page }: { page: string }) {
                 avatarDropDown ? 'show' : 'hidden'
               } absolute right-[-20px] top-10 z-50 w-[230px] items-center justify-start bg-white text-sm shadow-[-2px_-2px_10px_2px_rgba(0,0,0,0.1)] dark:bg-[#131313] dark:shadow-[-2px_-2px_5px_2px_rgba(0,0,0,0.7)]`}
             >
-              <Link href={`/${userDetails.displayName}`}>
-                <a>
-                  <div className="flex items-center py-2 px-4 hover:bg-[#f8f8f8] dark:hover:bg-[#080808]">
+              <Link legacyBehavior href={`/${userDetails.displayName}`}>
+                <div className="flex items-center py-2 px-4 hover:bg-[#f8f8f8] dark:hover:bg-[#080808]">
                     <div className="h-4 w-4">
                       <ProfilePicSVG strokeWidth="2" />
                     </div>
                     <p className="pl-2">Profile</p>
                   </div>
-                </a>
               </Link>
-              <Link href="/Explore">
+              <Link legacyBehavior href="/Explore">
                 <a>
                   <div className="flex items-center py-2 px-4 hover:bg-[#f8f8f8] dark:hover:bg-[#080808]">
                     <ExploreSVG />

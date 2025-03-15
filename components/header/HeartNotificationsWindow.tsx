@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { useAtom } from 'jotai';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import atoms, { heartDetails } from '../../util/atoms';
 import PostPopUp from '../PostPopUp';
@@ -64,9 +64,8 @@ export default function HeartNotificationsWindow() {
                   className="flex items-center gap-2 py-4 px-2 text-sm sm:px-6"
                   key={`hearts${index}`}
                 >
-                  <Link href={details.username!}>
-                    <a>
-                      {userNotifications.heartNotifications![index]
+                  <Link legacyBehavior href={details.username!}>
+                    {userNotifications.heartNotifications![index]
                         .userPhoto ? (
                         <Image
                           className="mr-2 h-11 w-11 cursor-pointer select-none rounded-full  object-cover "
@@ -83,13 +82,10 @@ export default function HeartNotificationsWindow() {
                           <ProfilePicSVG strokeWidth="1.5" />
                         </div>
                       )}
-                    </a>
                   </Link>
                   <div className="flex flex-col sm:flex-row">
-                    <Link href={details.username!}>
-                      <a>
-                        <p className="font-semibold">{details.username}</p>
-                      </a>
+                    <Link legacyBehavior href={details.username!}>
+                      <p className="font-semibold">{details.username}</p>
                     </Link>
                     <p className="text-xs sm:pl-1 sm:text-sm">{details.text}</p>
                   </div>

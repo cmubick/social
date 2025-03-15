@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAtom } from 'jotai';
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import CloseBtnSVG from '../svgComps/CloseBtnSVG';
 import ArrowSVG from '../svgComps/ArrowSVG';
 import atoms from '../../util/atoms';
@@ -109,7 +109,7 @@ function ViewAllStories({
                       positionIndex={positionIndex}
                     />
                     <div className="absolute top-9 left-0 z-[1000] ml-5 flex items-center gap-2 text-sm text-white">
-                      <Link href={userName}>
+                      <Link legacyBehavior href={userName}>
                         <a>
                           {stories[`${userName}Photo`].length === 0 ? (
                             <div className="h-8 w-8">
@@ -126,7 +126,7 @@ function ViewAllStories({
                           )}
                         </a>
                       </Link>
-                      <Link href={userName}>
+                      <Link legacyBehavior href={userName}>
                         <a>
                           <p className="cursor-pointer">{userName}</p>
                         </a>

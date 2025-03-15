@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { notificationTypes } from '../../util/atoms';
 import ProfilePicSVG from '../svgComps/ProfilePicSVG';
 import SpinnerSVG from '../svgComps/SpinnerSVG';
@@ -33,7 +33,7 @@ function HeaderSearchWindow({
               userDetails.map((details, index) => (
                 // item will not be deleted or updated so it is okay to use index as a key
                 // eslint-disable-next-line react/no-array-index-key
-                <Link href={`/${details.username}`} key={index}>
+                <Link legacyBehavior href={`/${details.username}`} key={index}>
                   <div className="flex cursor-pointer items-center py-3 pl-5 hover:bg-[#f8f8f8] dark:hover:bg-[#131313]">
                     {' '}
                     {details.avatarURL ? (

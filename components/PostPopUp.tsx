@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useAtom } from 'jotai';
 import CloseBtnSVG from './svgComps/CloseBtnSVG';
@@ -64,9 +64,8 @@ function PostPopUp({ postInformation, postUserDetails, setPostPopUp }: Props) {
         </div>
         <div className="flex h-[50%] w-full flex-col bg-white dark:bg-[#1c1c1c] sm:h-full lg:w-[50%]">
           <div className="flex items-center justify-start gap-3 border-b border-stone-200 py-1 px-4 dark:border-stone-700 sm:p-4 ">
-            <Link href={postUserDetails.username}>
-              <a>
-                {!postUserDetails.avatarURL ? (
+            <Link legacyBehavior href={postUserDetails.username}>
+            {!postUserDetails.avatarURL ? (
                   <div className="h-8 w-8">
                     <ProfilePicSVG strokeWidth="1" />
                   </div>
@@ -79,14 +78,11 @@ function PostPopUp({ postInformation, postUserDetails, setPostPopUp }: Props) {
                     height="32"
                   />
                 )}
-              </a>
             </Link>
-            <Link href={postUserDetails.username}>
-              <a>
-                <p className="cursor-pointer text-sm font-semibold">
-                  {postUserDetails.username}
-                </p>
-              </a>
+            <Link legacyBehavior href={postUserDetails.username}>
+              <p className="cursor-pointer text-sm font-semibold">
+                {postUserDetails.username}
+              </p>
             </Link>
           </div>
           <div className="flex-grow overflow-y-auto bg-[#fafafa] text-sm dark:bg-[#131313] dark:[color-scheme:dark] ">
@@ -101,9 +97,8 @@ function PostPopUp({ postInformation, postUserDetails, setPostPopUp }: Props) {
                     className="flex px-4 py-1 sm:p-4"
                   >
                     <div className="flex-shrink-0">
-                      <Link href={`/${commentInfo.username}`}>
-                        <a>
-                          {!commentInfo.avatarURL ? (
+                      <Link legacyBehavior href={`/${commentInfo.username}`}>
+                      {!commentInfo.avatarURL ? (
                             <div className="mr-4 h-8 w-8">
                               <ProfilePicSVG strokeWidth="1" />
                             </div>
@@ -116,15 +111,12 @@ function PostPopUp({ postInformation, postUserDetails, setPostPopUp }: Props) {
                               height="32"
                             />
                           )}
-                        </a>
                       </Link>
                     </div>
                     <div>
                       <p className="">
-                        <Link href={`/${commentInfo.username}`}>
-                          <a>
-                            <b>{commentInfo.username}</b>
-                          </a>
+                        <Link legacyBehavior href={`/${commentInfo.username}`}>
+                          <b>{commentInfo.username}</b>
                         </Link>
 
                         {` - ${commentInfo.text}`}
@@ -195,8 +187,8 @@ function PostPopUp({ postInformation, postUserDetails, setPostPopUp }: Props) {
                   Liked by{' '}
                   <b>
                     {postInformation.likes.length > 0 ? (
-                      <Link href={postInformation.likes[0]}>
-                        <a>{postInformation.likes[0]}</a>
+                      <Link legacyBehavior href={postInformation.likes[0]}>
+                        {postInformation.likes[0]}
                       </Link>
                     ) : (
                       ''

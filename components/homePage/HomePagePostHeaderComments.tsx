@@ -14,7 +14,7 @@ function HomePagePostHeaderComments({
         <div className="pt-2 text-sm">
           <p>
             <b>
-              <Link href={postDetails.comments[0].username}>
+              <Link legacyBehavior href={postDetails.comments[0].username}>
                 {postDetails.comments[0].username}
               </Link>
             </b>{' '}
@@ -26,7 +26,7 @@ function HomePagePostHeaderComments({
         <div className="pt-2 text-sm">
           <p>
             <b>
-              <Link href={postDetails.comments[1].username}>
+              <Link legacyBehavior href={postDetails.comments[1].username}>
                 {postDetails.comments[1].username}
               </Link>
             </b>{' '}
@@ -41,7 +41,7 @@ function HomePagePostHeaderComments({
         <div className="pt-2 text-sm">
           <p>
             <b>
-              <Link href={postDetails.comments[2].username}>
+              <Link legacyBehavior href={postDetails.comments[2].username}>
                 {postDetails.comments[2].username}
               </Link>
             </b>{' '}
